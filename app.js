@@ -31,17 +31,13 @@ var resolvers = {
 var schema = makeExecutableSchema({ typeDefs, resolvers });
 
 // koaBody is needed just for POST.
-// router.post('/graphql', bodyParser(), graphqlKoa({ schema: schema }));
-// router.get('/graphql', graphqlKoa({ schema: schema }));
+router.post('/graphql', bodyParser(), graphqlKoa({ schema: schema }));
+router.get('/graphql', graphqlKoa({ schema: schema }));
+router.get('/graphiql', graphiqlKoa({ endpointURL: '/graphql'}));
 
-// router.get('/graphiql', graphiqlKoa({ endpointURL: '/graphql' }));
 
-router.get('/', function* (next) {
-    this.body = 'hello world';
-});
-
-// app.use(router.routes());
-// app.use(router.allowedMethods());
+app.use(router.routes());
+app.use(router.allowedMethods());
 
 app.listen(7000, function () {
     console.log('service at 7000 port');
