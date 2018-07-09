@@ -48,7 +48,7 @@ npm start
 
 * 增加维护成本
     
-    采用RESTful架构的项目采用MVC，增加相应的维护文件，Schema和types又要相应的进行维护，需要维护数据库Schema和GraphQL相对应的Types,
+    采用RESTful架构的项目采用MVC，增加相应的维护文件，Schema和types又要相应的进行维护，需要维护数据库Schema和GraphQL相对应的Types,
 
     查询是非常方便，但是一个项目不可能只做查询那么简单的，就会涉及到数据的增删改，增删改就需要对数据的完整性的要求比较严格，返回的结果不一样。前端也不能做统一处理。
 
