@@ -31,6 +31,7 @@ const queryType = new GraphQLObjectType({
       time: {
         type: GraphQLString,
         resolve: function () {
+          console.log(arguments);
           return Date.now().valueOf();
         }
       },

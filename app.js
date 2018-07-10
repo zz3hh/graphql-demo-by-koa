@@ -12,6 +12,11 @@ const config_info = config[env];
 
 mongoose.connect(config_info.mongodb_uri);
 
+app.use(async function(ctx,next){
+    console.log(ctx.request.ip);
+    await next();
+});
+
 app.use(bodyParser({
     multipart: true
 }));
